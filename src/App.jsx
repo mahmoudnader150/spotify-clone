@@ -3,7 +3,7 @@ import Login from './Login.jsx';
 
 function App() {
 
-  return  <Login />
+  return  <Login className="d-flex flex-column justify-content-center"/>
 }
   
 
