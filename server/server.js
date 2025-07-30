@@ -14,10 +14,12 @@ app.post('/login', (req, res) => {
 
   spotifyApi.authorizationCodeGrant(code).then(
     (data) => {
-      const { access_token, refresh_token } = data.body;
-
-      // Store the tokens in your database or session
-      res.json({ access_token, refresh_token });
+    //  const { access_token, refresh_token } = data.body;
+      res.json({ 
+        accessToken: data.body.access_token,
+        refreshToken: data.body.refresh_token,
+        expiresIn: data.body.expires_in
+      });
     },
     (err) => {
       console.error('Error getting Tokens:', err);
