@@ -1,8 +1,10 @@
 const express = require('express');
 const spotifyWebApi = require('spotify-web-api-node');
+const cors = require('cors');
+
 
 const app = express();
-
+app.use(cors());
 app.post('/login', (req, res) => {
   const { code } = req.body;
 
@@ -30,3 +32,4 @@ app.post('/login', (req, res) => {
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000');
 });
+
