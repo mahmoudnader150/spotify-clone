@@ -43,8 +43,4 @@
 - Search for any song, artist, or album.
 - Click a track to view lyrics and play (Premium required for playback).
 
-## Screenshot
-![App Screenshot](./screen.png)
 
-## License
-MIT
