@@ -36,14 +36,26 @@ export default function Dashboard({ code }) {
   }
 
   return (
-    <div className="container py-2">
-      <SearchBar search={search} setSearch={setSearch} />
-      <div className="flex-grow-1 my-2" style={{ overflowY: "auto" }}>
-        {tracks.map(track => (
-          <TrackSearchResult track={track} key={track.uri} chooseTrack={chooseTrack} />
-        ))}
+    <div style={{
+      minHeight: '100vh',
+      width: '100vw',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: '#181818',
+      padding: 0,
+      margin: 0,
+    }}>
+      <div className="container d-flex flex-column align-items-center justify-content-center" style={{ maxWidth: 800, width: '100%' }}>
+        <SearchBar search={search} setSearch={setSearch} />
+        <div className="w-100 d-flex flex-column align-items-center" style={{ maxWidth: 700, overflowY: 'auto' }}>
+          {tracks.map(track => (
+            <TrackSearchResult track={track} key={track.uri} chooseTrack={chooseTrack} />
+          ))}
+        </div>
       </div>
-      <div className="fixed-bottom">
+      <div className="fixed-bottom w-100" style={{ maxWidth: 700, margin: '0 auto' }}>
         <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
       </div>
     </div>
