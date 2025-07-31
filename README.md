@@ -1,12 +1,50 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Spotify Clone 🎵
 
-Currently, two official plugins are available:
+>A modern Spotify web client clone built with React, Vite, and Node.js.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Screenshot of the app](./screen.png)
 
-## Expanding the ESLint configuration
+## Features
+- Spotify authentication (OAuth)
+- Search for tracks, artists, and albums
+- Play tracks (Spotify Premium required)
+- View lyrics for any track (via Genius API)
+- Responsive, modern, Spotify-inspired UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+### Prerequisites
+- Node.js (v18+ recommended)
+- Spotify Developer account ([create an app here](https://developer.spotify.com/dashboard))
+- Genius API account ([get a token here](https://genius.com/api-clients))
+
+### Setup
+1. Clone this repo
+2. Install dependencies:
+   ```bash
+   npm install
+   cd server && npm install
+   ```
+3. In `server/server.js`, set your Spotify Client ID, Client Secret, Redirect URI, and Genius API token.
+4. Start the backend:
+   ```bash
+   cd server
+   npm run devStart
+   ```
+5. Start the frontend:
+   ```bash
+   npm run dev
+   ```
+6. Open [http://127.0.0.1:5173](http://127.0.0.1:5173) in your browser.
+
+## Usage
+- Click "Login with Spotify" and authorize the app.
+- Search for any song, artist, or album.
+- Click a track to view lyrics and play (Premium required for playback).
+
+## Screenshot
+![App Screenshot](./screen.png)
+
+## License
+MIT
